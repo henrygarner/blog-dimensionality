@@ -1,0 +1,24 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}
+        ;; io.github.nextjournal/markdown {:mvn/version "0.6.157"}
+        io.github.nextjournal/clerk {:mvn/version "0.16.1016"}
+        org.babashka/cli {:mvn/version "0.7.52"}
+        net.mikera/core.matrix {:mvn/version "0.63.0"}
+        net.mikera/vectorz-clj {:mvn/version "0.48.0"}}
+ :aliases
+ {:run-m {:main-opts ["-m" "juxt.blog-dimensionality"]}
+  :run-x {:ns-default juxt.blog-dimensionality
+          :exec-fn greet
+          :exec-args {:name "Clojure"}}
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.5"}}
+          :ns-default build}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
+                      io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}}
+  :nextjournal/clerk {:extra-paths ["datasets"]
+                               :exec-fn nextjournal.clerk/build!
+                               ;; notebooks to be built, accepts globs patterns
+                               :exec-args {:git/url "https://github.com/nextjournal/clerk-demo"
+                                           :paths ["index.md"]}
+                               :main-opts ["-m" "babashka.cli.exec"]}}}
