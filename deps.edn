@@ -5,7 +5,17 @@
         org.babashka/cli {:mvn/version "0.7.52"}
         net.mikera/core.matrix {:mvn/version "0.63.0"}
         net.mikera/vectorz-clj {:mvn/version "0.48.0"}
-        kixi/stats {:mvn/version "0.5.6"}}
+        kixi/stats {:mvn/version "0.5.6"}
+        techascent/tech.ml.dataset {:mvn/version "7.032"}
+        org.apache.arrow/arrow-vector {:mvn/version "6.0.0"
+                                       :exclusions [commons-codec/commons-codec
+                                                    org.slf4j/slf4j-api]}
+        org.lz4/lz4-java {:mvn/version "1.8.0"}
+        com.github.luben/zstd-jni {:mvn/version "1.5.4-1"}
+        com.cnuernber/jarrow {:mvn/version "1.000"}
+        org.apache.commons/commons-compress {:mvn/version "1.27.1"
+                                             :exclusions [commons-codec/commons-codec
+                                                          org.slf4j/slf4j-api]}}
  :aliases
  {:run-m {:main-opts ["-m" "juxt.blog-dimensionality"]}
   :run-x {:ns-default juxt.blog-dimensionality
