@@ -19,7 +19,9 @@
                                                           org.slf4j/slf4j-api]}
         uncomplicate/neanderthal {:mvn/version "0.49.1"}
         cnuernber/dtype-next {:mvn/version "10.118"}
-        com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.3.3"}}
+        com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.3.3"}
+        org.nd4j/nd4j-api {:mvn/version "1.0.0-M2.1"}
+        org.nd4j/nd4j-native {:mvn/version "1.0.0-M2.1"}}
  :aliases
  {:run-m {:main-opts ["-m" "juxt.blog-dimensionality"]}
   :run-x {:ns-default juxt.blog-dimensionality
