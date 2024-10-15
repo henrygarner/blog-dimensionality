@@ -65,6 +65,9 @@
   (analogy data "one" "many" "person")
   ;; => people
 
+  (analogy data "one" "many" "aunty")
+  ;; => aunties
+
   (analogy data "good" "best" "sad")
   ;; => saddest
 
@@ -73,6 +76,14 @@
 
   (analogy data "man" "woman" "king")
   ;; => queen
+
+  (analogy data "neutral" "evil" "good")
+  ;; => evil (for any given input)
+
+  (analogy data "husband" "wife" "iphone")
+  ;; =>> "ipad"
+
+  ;; Token at the origin is a comma
   )
 
 
